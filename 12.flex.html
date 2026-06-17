@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Flex Layout</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: Arial, sans-serif; padding: 20px; }
+
+   
+    .container {
+      display: flex;
+      flex-direction: column;
+                 
+      width: 500px;
+    }
+
+    .row {
+      display: flex;
+    
+    }
+
+
+    .box {
+      padding: 40px 10px;
+      color: #333;
+      font-size: 13px;
+      text-align: center;
+    }
+
+  
+    .box1 {
+      background-color: #f4a46a;
+      flex: 1;                    
+    }
+
+    
+    .box2 { background-color: #8aaad4; flex: 1; } 
+    .box3 { background-color: #6abf8a; flex: 1; } 
+    .box4 { background-color: #e08080; flex: 1; } 
+    .box5 { background-color: #d4c96a; flex: 1; }
+    .box6 { background-color: #a08ad4; flex: 1; } 
+  </style>
+</head>
+<body>
+
+  <div class="container">
+
+  
+    <div class="row">
+      <div class="box box1">Content Area 1</div>
+    </div>
+
+   
+    <div class="row">
+      <div class="box box2">Content Area 2</div>
+      <div class="box box3">Content Area 3</div>
+    </div>
+
+  
+    <div class="row">
+      <div class="box box4">Content Area 4</div>
+      <div class="box box5">Content Area 5</div>
+      <div class="box box6">Content Area 6</div>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Image Hover Overlay</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #1a1a2e;
+    }
+
+    /* ── The card container ── */
+    .card {
+      position: relative;     /* needed so overlay can sit ON TOP of the image */
+      width: 220px;
+      height: 280px;
+      border-radius: 12px;
+      overflow: hidden;       /* hides anything outside the card edges */
+      cursor: pointer;
+    }
+
+    
+    .card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;      
+      display: block;
+    }
+
+    /* ── The overlay (hidden by default) ──
+       position: absolute puts it exactly on top of the image
+       top/left/right/bottom: 0 makes it cover the full card */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+
+      /* semi-transparent dark background */
+      background: rgba(0, 0, 0, 0.6);
+
+      /* center the text inside */
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;  /* push content to bottom */
+      padding: 20px;
+
+      /* HIDDEN: opacity 0 = invisible */
+      opacity: 0;
+
+      /* smooth fade animation */
+      transition: opacity 0.3s ease;
+    }
+
+    /* ── When user hovers the card, show the overlay ── */
+    .card:hover .overlay {
+      opacity: 1;   /* fully visible */
+    }
+
+    .overlay h3 {
+      color: white;
+      font-size: 18px;
+      margin-bottom: 6px;
+    }
+
+    .overlay p {
+      color: #ccc;
+      font-size: 13px;
+      margin-bottom: 12px;
+    }
+
+    .overlay button {
+      background: white;
+      border: none;
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 12px;
+      cursor: pointer;
+      width: fit-content;
+    }
+
+    .overlay button:hover {
+      background: #ddd;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+
+    <!-- Using a free placeholder nature image -->
+    <img src="https://picsum.photos/seed/tree/220/280" alt="Nature" />
+
+    <!-- This overlay appears on hover -->
+    <div class="overlay">
+      <h3>Card Title</h3>
+      <p>This is a sample card description</p>
+      <button>Read More</button>
+    </div>
+
+  </div>
+
+</body>
+</html>

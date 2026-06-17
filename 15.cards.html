@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Members</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+      padding: 30px 20px;
+    }
+
+    /* ── Page wrapper ── */
+    .section {
+      background: white;
+      border-radius: 12px;
+      padding: 30px 20px;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .section .subtitle {
+      color: #aaa;
+      font-size: 13px;
+      margin-bottom: 4px;
+    }
+
+    .section h2 {
+      font-size: 22px;
+      margin-bottom: 30px;
+      color: #222;
+    }
+
+    /* ── Team grid: 4 columns on desktop ──
+       flex-wrap: wrap allows cards to move to next line on small screens */
+    .team-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    /* ── Individual card ── */
+    .card {
+      background: #fafafa;
+      border: 1px solid #eee;
+      border-radius: 12px;
+      padding: 20px 16px;
+      width: 180px;
+      text-align: center;
+    }
+
+    /* ── Circular avatar image ── */
+    .card img {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;       /* makes it a circle */
+      object-fit: cover;
+      margin-bottom: 10px;
+      border: 3px solid #e0e0e0;
+    }
+
+    .card h4 {
+      font-size: 15px;
+      color: #222;
+      margin-bottom: 4px;
+    }
+
+    .card p {
+      font-size: 12px;
+      color: #888;
+      margin-bottom: 12px;
+    }
+
+    /* ── Social icons row ── */
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    .socials a {
+      display: inline-block;
+      width: 28px;
+      height: 28px;
+      background: #333;
+      color: white;
+      border-radius: 50%;
+      font-size: 12px;
+      line-height: 28px;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .socials a:hover {
+      background: #555;
+    }
+
+    /* ── MOBILE: 1 card per row on small screens ── */
+    @media (max-width: 480px) {
+      .card {
+        width: 100%;
+        max-width: 260px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="section">
+    <p class="subtitle">Experts</p>
+    <h2>Our Team Members</h2>
+
+    <div class="team-grid">
+
+      <!-- Card 1 -->
+      <div class="card">
+        <img src="https://i.pravatar.cc/70?img=11" alt="Noman" />
+        <h4>Noman</h4>
+        <p>Programmer</p>
+        <div class="socials">
+          <a href="#">f</a>
+          <a href="#">t</a>
+          <a href="#">in</a>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="card">
+        <img src="https://i.pravatar.cc/70?img=12" alt="Aasim" />
+        <h4>Aasim</h4>
+        <p>CSS</p>
+        <div class="socials">
+          <a href="#">f</a>
+          <a href="#">t</a>
+          <a href="#">in</a>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="card">
+        <img src="https://i.pravatar.cc/70?img=13" alt="Jhakaila" />
+        <h4>Jhakaila</h4>
+        <p>Designer</p>
+        <div class="socials">
+          <a href="#">f</a>
+          <a href="#">t</a>
+          <a href="#">in</a>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="card">
+        <img src="https://i.pravatar.cc/70?img=14" alt="Raheem" />
+        <h4>Raheem</h4>
+        <p>Mobile</p>
+        <div class="socials">
+          <a href="#">f</a>
+          <a href="#">t</a>
+          <a href="#">in</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>

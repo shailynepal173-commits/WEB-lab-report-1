@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Float Layout</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body { font-family: Arial, sans-serif; }
+
+    .header {
+      background-color: #5a5f8a;
+      color: white;
+      text-align: center;
+      padding: 15px;
+    }
+
+    
+    .nav {
+      background-color: #7a8a6a;
+      color: white;
+      padding: 10px 15px;
+    }
+    .left {
+      float: left;          
+      width: 25%;
+      background-color: #b05a5a; 
+      color: white;
+      padding: 10px;
+      min-height: 200px;
+    }
+
+    .content {
+      float: left;         
+      width: 50%;
+      background-color: #00bfff; 
+      color: white;
+      padding: 10px;
+      min-height: 200px;
+    }
+
+    .right {
+      float: left;         
+      width: 25%;
+      background-color: #8a7abf; 
+      color: white;
+      padding: 10px;
+      min-height: 200px;
+    }
+
+
+    .footer {
+        clear:both;
+      background-color: #7a8a6a;
+      color: white;
+      padding: 10px 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">Header</div>
+
+  <div class="nav">Menu</div>
+
+ 
+  <div class="middle">
+    <div class="left">Left Side</div>
+    <div class="content">Content</div>
+    <div class="right">Right</div>
+  </div>
+
+  <div class="footer">Footer</div>
+
+</body>
+</html>

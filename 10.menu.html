@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+
+  <!-- This makes the page look correct on mobile screens -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Responsive Menu</title>
+
+  <style>
+    /* ── Reset: remove default browser spacing ── */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    /* ────────────────────────────────
+       NAVBAR (the blue bar at the top)
+    ──────────────────────────────── */
+    nav {
+      background-color: #1a2a4a;   /* dark navy blue */
+      display: flex;                /* puts logo + links side by side */
+      align-items: center;          /* vertically centers everything */
+      justify-content: space-between; /* logo on left, links on right */
+      padding: 0 20px;
+      height: 50px;
+    }
+
+    /* ── Logo text on the left ── */
+    .logo {
+      color: white;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    /* ── The list of links ── */
+    .nav-links {
+      list-style: none;   /* removes bullet points */
+      display: flex;      /* puts li items in a row */
+      gap: 20px;          /* space between each link */
+    }
+
+    .nav-links a {
+      color: white;
+      text-decoration: none;   /* removes underline */
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      text-decoration: underline;
+    }
+
+    /* ────────────────────────────────
+       HAMBURGER BUTTON (☰)
+       Hidden on big screens, shown on mobile
+    ──────────────────────────────── */
+    .menu-btn {
+      display: none;           /* hidden by default */
+      background: none;
+      border: 1px solid white;
+      color: white;
+      padding: 5px 10px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    /* ────────────────────────────────
+       MOBILE STYLES
+       These rules apply when screen width ≤ 600px
+    ──────────────────────────────── */
+    @media (max-width: 600px) {
+
+      /* Show the hamburger button */
+      .menu-btn {
+        display: block;
+      }
+
+      /* Stack links vertically and hide them by default */
+      .nav-links {
+        display: none;             /* hidden until button is clicked */
+        flex-direction: column;    /* vertical list */
+        position: absolute;        /* floats below the navbar */
+        top: 50px;
+        left: 0;
+        width: 50%;
+        background-color: #1a2a4a;
+        padding: 10px 0;
+      }
+
+      /* When nav has class "open", show the links */
+      nav.open .nav-links {
+        display: flex;
+      }
+
+      .nav-links li {
+        text-align: center;
+        padding: 10px 0;
+      }
+
+      .nav-links a {
+        font-size: 15px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── The navbar ── -->
+  <nav id="navbar">
+
+    <div class="logo">Mystery Code</div>
+
+    <!-- Hamburger button — only visible on mobile -->
+    <button class="menu-btn" onclick="toggleMenu()">Menu</button>
+
+    <!-- Navigation links -->
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Us</a></li>
+      <li><a href="#">Service</a></li>
+      <li><a href="#">Portfolio</a></li>
+      <li><a href="#">Blog</a></li>
+      <li><a href="#">Contact Us</a></li>
+    </ul>
+
+  </nav>
+
+  <script>
+    // This function runs when the Menu button is clicked.
+    // It adds or removes the "open" class on the navbar.
+    // In CSS, nav.open .nav-links { display: flex } shows the links.
+    function toggleMenu() {
+      const navbar = document.getElementById("navbar");
+      navbar.classList.toggle("open");
+    }
+  </script>
+
+</body>
+</html>
